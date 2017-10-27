@@ -7,24 +7,27 @@
     <div class="column is-4 is-offset-4">
       <h3 class="title">#list</h3>
 
-      <# <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="/assets/img/darkvador.png" />
-              </figure>
+      <% users.forEach((aUser) => { %>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="/assets/img/darkvador.png" />
+                </figure>
+              </div>
+              <div class="media-content has-text-black">
+                <p class="title is-4 has-text-black"><%= aUser.fullname %></p>
+                <p class="subtitle is-6 has-text-black"><%= aUser.age %></p>
+              </div>
+              <a class="button" href="/update/__ID__">Update <%= aUser.id %></a>&nbsp;
+              <a class="button is-danger">Delete</a>
             </div>
-            <div class="media-content has-text-black">
-              <p class="title is-4 has-text-black">__FULLNAME__</p>
-              <p class="subtitle is-6 has-text-black">__AGE__</p>
-            </div>
-            <a class="button" href="/update/__ID__">Update</a>&nbsp;
-            <a class="button is-danger">Delete</a>
           </div>
         </div>
-      </div>
-      <br /> #>
+        <br />
+      <% }); %>
 
     </div>
   </div>
