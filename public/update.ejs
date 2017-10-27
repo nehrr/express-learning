@@ -10,20 +10,20 @@
         <figure class="avatar">
           <img src="./assets/img/darkvador.png" />
         </figure>
-        <form>
+        <form id="mForm" method="PUT" action="/update-user" enctype="application/json">
           <div class="field">
-            <label class="label has-text-left">Fullname</label>
+            <label class="label has-text-left"><%= user.fullname %></label>
             <div class="control">
               <input class="input is-large" type="text" autofocus="" />
             </div>
           </div>
           <div class="field">
             <div class="control">
-              <label class="label has-text-left">Age</label>
+              <label class="label has-text-left"><%= user.id %></label>
               <input class="input is-large" type="number" />
             </div>
           </div>
-          <a class="button is-block is-info is-large is-warning" >Update the user __ID__</a>
+          <a class="button is-block is-info is-large is-warning" onclick="document.getElementById('mForm').submit();" >Update the user <%= user.id %></a>
         </form>
       </div>
       <a href="/list">Go To Listing</a>

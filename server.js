@@ -41,9 +41,8 @@ app.get('/list', (request, response) => {
 });
 
 app.get('/update/:id', (request, response) => {
-  console.log(`${request.params}`);
   console.log(`${request.method} ${request.url}`);
-  response.render(`update/${request.params}`);
+  response.render('update', {user: request.session.users[request.params.id]});
 });
 
 app.get('*', (request, response) => {
@@ -64,8 +63,9 @@ app.post('/add-user', (request, response) => {
 });
 
 app.put('/update-user/:id', (request, response) => {
+  
   console.log(`${request.method} ${request.url}`);
-  response.end();
+  response.redirect('list');
 });
 
 app.delete('/delete-user/:id', (request, response) => {

@@ -7,7 +7,8 @@
     <div class="column is-4 is-offset-4">
       <h3 class="title">#list</h3>
 
-      <% users.forEach((aUser) => { %>
+      <% users ? users : '' %>
+      <% if (users) { users.forEach((aUser) => { %>
 
         <div class="card">
           <div class="card-content">
@@ -21,13 +22,13 @@
                 <p class="title is-4 has-text-black"><%= aUser.fullname %></p>
                 <p class="subtitle is-6 has-text-black"><%= aUser.age %></p>
               </div>
-              <a class="button" href="/update/__ID__">Update <%= aUser.id %></a>&nbsp;
+              <a class="button" href='/update/<%= aUser.id %>'>Update <%= aUser.id %></a>&nbsp;
               <a class="button is-danger">Delete</a>
             </div>
           </div>
         </div>
         <br />
-      <% }); %>
+      <% })}; %>
 
     </div>
   </div>
